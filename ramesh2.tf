@@ -6,10 +6,11 @@ variable "content" {
     default = "devops aws course" 
 }
 variable "prefix" {
-    default = "A"
+    default = "MR"
     type = string
     }
 
     variable "length" {
         default = "1"
         type = number
+}
