@@ -1,9 +1,12 @@
-resource "local_file" "abc" {
-    filename = "ramesh.txt"
-    content = data.local_file.datas.content
-  
-}
+resource "local_file" "foreach1" {
+    filename = each.value
+    content = "this is for each topic"
+    for_each = toset(var.filename)
 
-data "local_file" "datas" {
-filename = "datasrs.txt"
+}
+variable "filename" {
+default = [
+    "a.txt",
+    "b.txt"
+]  
 }
